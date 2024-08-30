@@ -1,0 +1,35 @@
+{
+  "name": "typescript-workshops",
+  "version": "1.0.0",
+  "description": "Workshops examples",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "console": "tsc index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrykomiotek/typescript-workshops.git"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "author": "Patryk Omiotek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patrykomiotek/typescript-workshops/issues"
+  },
+  "homepage": "https://github.com/patrykomiotek/typescript-workshops#readme",
+  "devDependencies": {
+    "@swc/cli": "^0.4.0",
+    "@swc/core": "^1.7.14",
+    "cross-fetch": "^4.0.0",
+    "jsdom": "^25.0.0",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "^2.0.5"
+  }
+}
