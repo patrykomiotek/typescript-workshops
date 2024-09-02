@@ -1,6 +1,6 @@
-import { fetchPeople, type Person } from '../services/fetchPeople';
+import { ApiSuccess, fetchPeople, type Person } from '../services/fetchPeople';
 
-type LoadFunction<T> = { (): Promise<T> };
+type LoadFunction<T> = { (): Promise<ApiSuccess<T>> };
 
 // pending
 // resolved
@@ -9,18 +9,21 @@ type LoadFunction<T> = { (): Promise<T> };
 type Res<T> =
   | {
       // pending
+      status: 'pending';
       data: undefined;
       isLoading: true;
       isError: false;
     }
   | {
       // resolved
+      status: 'resolved';
       data: T;
       isLoading: false;
       isError: false;
     }
   | {
       // rejected
+      status: 'rejected';
       data: undefined;
       isLoading: false;
       isError: true;
@@ -43,7 +46,8 @@ const getData = async <T>(load: LoadFunction<T>): Promise<Res<T>> => {
   //   });
 
   // pending
-  const initialState = {
+  let state: Res<T> = {
+    status: 'pending',
     isLoading: true,
     isError: false,
     data: undefined,
@@ -54,42 +58,58 @@ const getData = async <T>(load: LoadFunction<T>): Promise<Res<T>> => {
 
     if (data) {
       // fulfilled
-      return {
-        data,
+      state = {
+        status: 'resolved',
+        data: data.results,
         isLoading: false,
         isError: false,
       };
     }
-
-    return {
-      isLoading: true,
-      isError: false,
-      data: undefined,
-    };
   } catch (error) {
     // rejected
-    return {
+    state = {
+      status: 'rejected',
       isError: true,
       isLoading: false,
       data: undefined,
     };
   }
+
+  return state;
 };
 
 // const { data, isLoading, isError } = getData<Person>(fetchPeople)
 // const { data, isLoading, isError } = getData<Person>(() => fetchPerson(123))
 
-const { data, isLoading, isError } = await getData(fetchPeople); //
+const { data, status, isLoading, isError } =
+  await getData<Person[]>(fetchPeople); //
 
-if (isLoading) {
+// #1
+// if (isLoading) {
+//   console.log('Loading');
+// }
+
+// if (isError) {
+//   console.log('Error');
+// }
+
+// const _people = data;
+
+// if (isLoading) {
+//   console.log('Loading');
+// } else if (isError) {
+//   console.log('Error');
+// } else {
+//   const _people = data;
+// }
+
+if (status === 'pending') {
   console.log('Loading');
-}
-
-if (isError) {
+} else if (status === 'rejected') {
   console.log('Error');
+} else if (status === 'resolved') {
+  const people = data;
+  people.forEach((item) => {
+    console.log(item);
+  });
 }
-
-const people = data?.results;
-people.forEach((item) => {
-  console.log(item);
-});

@@ -44,11 +44,12 @@ interface Starship {
   name: string;
 }
 
-export const fetchPeople = async () => {
+export const fetchPeople = async (): Promise<ApiSuccess<Person[]>> => {
   try {
     const response = await fetch('https://swapi.dev/api/people');
     // return response.json(); // Promise
-    return (await response.json()) as ApiSuccess<Person[]>;
+    // return (await response.json()) as ApiSuccess<Person[]>;
+    return await response.json();
   } catch (error) {
     if (error instanceof ApiError) {
       // log sth
@@ -56,6 +57,10 @@ export const fetchPeople = async () => {
     } else {
       // general error
     }
+    return {
+      count: 0,
+      results: [],
+    };
   }
 };
 
