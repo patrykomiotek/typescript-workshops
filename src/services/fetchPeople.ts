@@ -16,18 +16,18 @@ interface ApiResponse<T> {
 class ApiError extends Error {
   // #1
   declare message: string;
-
   // #2 message: string;
   // constructor() {
   //   super();
   //   this.message = 'one'
   // }
-
   // #3 message: string = 'sth';
-
   // #4
-  // constructor(message: string) {
+  // constructor(public message: string) {
   //   super();
+  // }
+  // doSth() {
+  //   this.message = 'new value'
   // }
 }
 
