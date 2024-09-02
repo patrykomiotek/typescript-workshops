@@ -29,6 +29,7 @@
   "homepage": "https://github.com/patrykomiotek/typescript-workshops#readme",
   "devDependencies": {
     "@types/node": "^22.5.2",
+    "@types/uuid": "^10.0.0",
     "autoprefixer": "^10.4.20",
     "cross-fetch": "^4.0.0",
     "jsdom": "^25.0.0",
@@ -44,6 +45,7 @@
   },
   "dependencies": {
     "date-fns": "^3.6.0",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "uuid": "^10.0.0"
   }
 }
