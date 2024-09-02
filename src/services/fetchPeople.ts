@@ -1,4 +1,6 @@
 // fetch data and return
+// Napisz funkcję getData, która zwróci 3 wartości: data, isLoading, isError
+// w zalezności od stanu Promisu. Promise słuzyl do pobierania danych.
 
 interface ApiSuccess<T> {
   count: number;
@@ -12,7 +14,21 @@ interface ApiResponse<T> {
 }
 
 class ApiError extends Error {
-  message: string;
+  // #1
+  declare message: string;
+
+  // #2 message: string;
+  // constructor() {
+  //   super();
+  //   this.message = 'one'
+  // }
+
+  // #3 message: string = 'sth';
+
+  // #4
+  // constructor(message: string) {
+  //   super();
+  // }
 }
 
 interface Person {
