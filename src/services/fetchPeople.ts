@@ -2,7 +2,7 @@
 // Napisz funkcję getData, która zwróci 3 wartości: data, isLoading, isError
 // w zalezności od stanu Promisu. Promise słuzyl do pobierania danych.
 
-interface ApiSuccess<T> {
+export interface ApiSuccess<T> {
   count: number;
   results: T;
 }
@@ -31,7 +31,7 @@ class ApiError extends Error {
   // }
 }
 
-interface Person {
+export interface Person {
   name: string;
   height: number;
   mass: number;
@@ -44,7 +44,7 @@ interface Starship {
   name: string;
 }
 
-const fetchPeople = async () => {
+export const fetchPeople = async () => {
   try {
     const response = await fetch('https://swapi.dev/api/people');
     // return response.json(); // Promise
