@@ -74,6 +74,8 @@ const fetchPerson = async (id: number) => {
   }
 };
 
+type PeopleList = ReturnType<typeof fetchPeople>;
+
 const fetchStarship = async (id: number): Promise<ApiResponse<Starship>> => {
   try {
     const response = await fetch(`https://swapi.dev/api/people/${id}`);

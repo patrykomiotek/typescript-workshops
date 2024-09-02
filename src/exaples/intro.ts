@@ -31,3 +31,11 @@ const readonlyEmployee: ReadonlyHelper<Employee> = {
   id: 123,
   name: 'Janusz',
 };
+
+// TS
+type ReadonlyMember = typeof readonlyEmployee;
+
+// JS
+// if (sth typeof === 'object') {
+//   console.log('error');
+// }

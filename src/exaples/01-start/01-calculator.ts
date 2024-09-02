@@ -4,8 +4,15 @@
  * Funkcja powinna zwracać wynik operacji. Użyj union type dla operatora.
  *
  */
+
+type Operator = '+' | '-';
+
 // Uzupełnij funkcję:
-function calculator(a: number, b: number, operator: /* uzupełnij typ */): number {
+function calculator(
+  a: number,
+  b: number,
+  operator: Operator /* uzupełnij typ */,
+): number {
   // Implementacja
 }
 
