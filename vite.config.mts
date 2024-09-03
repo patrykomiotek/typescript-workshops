@@ -18,6 +18,7 @@ export default defineConfig({
     setupFiles: [path.resolve(__dirname, 'scripts/setup.ts')],
     passWithNoTests: true,
     environment: 'jsdom',
+    globals: true,
   },
   // plugins: [tsconfigPaths()],
   // plugins: [checker({ typescript: true })]

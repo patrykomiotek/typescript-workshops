@@ -4,23 +4,25 @@
 
 function log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
   const originalMethod = descriptor.value;
+
   descriptor.value = function (...args: any[]) {
     console.log(`Calling method: ${propertyKey} with arguments: ${args}`);
+
     return originalMethod.apply(this, args);
   };
 }
 
-class Example {
+function controller(constructor: Function) {
+  //
+}
+
+@controller
+export class Example {
+  // @log()
+  car: string = 'audi';
+
   @log
   someMethod(arg: number) {
     return arg * 2;
   }
-
-  // @addFive
-  // sum(a: number, b: number) {
-  //   return a + b;
-  // }
 }
-
-const example = new Example();
-example.someMethod(5); // Loguje: Wywołanie metody: someMethod z argumentami: 5
