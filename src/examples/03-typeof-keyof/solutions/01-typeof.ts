@@ -11,7 +11,6 @@ const user = {
 };
 
 type UserType = typeof user;
-type UserTypeKeys = keyof typeof user;
 
 const printUserInfo = (user: UserType) => {
   console.log(user);

@@ -15,3 +15,6 @@ type CarProperties = keyof Car;
 const getCarProperty = (car: Car, key: CarProperties) => {
   return car[key];
 };
+
+declare const car: Car;
+getCarProperty(car, 'make');
