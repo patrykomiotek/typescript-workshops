@@ -1,3 +1,4 @@
+import { title } from 'process';
 import { expect, it } from 'vitest';
 
 interface User {
@@ -18,7 +19,18 @@ interface Post {
  * returns a user?
  */
 const makeUser = () => {
-  return {};
+  return {
+    id: 123,
+    firstName: 'a',
+    lastName: 'b',
+    role: 'admin',
+    posts: [
+      {
+        id: 2,
+        title: 'Lorem ipsum',
+      },
+    ],
+  };
 };
 
 it('Should return a valid user', () => {

@@ -95,21 +95,21 @@ const { data, status, isLoading, isError } =
 
 // const _people = data;
 
-// if (isLoading) {
-//   console.log('Loading');
-// } else if (isError) {
-//   console.log('Error');
-// } else {
-//   const _people = data;
-// }
-
-if (status === 'pending') {
+if (isLoading) {
   console.log('Loading');
-} else if (status === 'rejected') {
+} else if (isError) {
   console.log('Error');
-} else if (status === 'resolved') {
-  const people = data;
-  people.forEach((item) => {
-    console.log(item);
-  });
+} else {
+  const _people = data;
 }
+
+// if (status === 'pending') {
+//   console.log('Loading');
+// } else if (status === 'rejected') {
+//   console.log('Error');
+// } else if (status === 'resolved') {
+//   const people = data;
+//   people.forEach((item) => {
+//     console.log(item);
+//   });
+// }

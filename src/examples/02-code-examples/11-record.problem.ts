@@ -1,7 +1,10 @@
 import { expect, it } from 'vitest';
 
+type Role = 'admin' | 'user' | 'member';
+
 const createCache = () => {
-  const cache = {};
+  const cache: Record<string, string> = {};
+  // const cache: Record<Role, string> = {};
 
   const add = (id: string, value: string) => {
     cache[id] = value;
