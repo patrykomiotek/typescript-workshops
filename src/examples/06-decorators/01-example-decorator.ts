@@ -15,6 +15,11 @@ class Example {
   someMethod(arg: number) {
     return arg * 2;
   }
+
+  // @addFive
+  // sum(a: number, b: number) {
+  //   return a + b;
+  // }
 }
 
 const example = new Example();
