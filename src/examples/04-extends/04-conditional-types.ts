@@ -27,3 +27,26 @@ type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
 
 type ResolvedType = UnwrapPromise<Promise<string>>; // string
 type NonPromiseType = UnwrapPromise<number>; // number
+
+// @ts-expect-error
+type OnlyStringProperties<T> = {
+  //   [K in keyof T as T[K] extends string ? K : never]?: T[K] // optional
+  //   readonly [K in keyof T as T[K] extends string ? K : never]: T[K]
+  //   [K in keyof T as T[K] extends string ? K : never]-?: T[K] // all required
+  [K in keyof T as T[K] extends string ? K : never]: T[K];
+};
+
+type UserDetailsDto = {
+  id: number;
+  name: string;
+  job: string;
+  age: number;
+};
+
+// const user: Readonly<Partial<OnlyStringProperties<UserDetailsDto>>> = {
+// const user: Partial<OnlyStringProperties<UserDetailsDto>> = {
+// @ts-expect-error
+const user: OnlyStringProperties<UserDetailsDto> = {
+  name: 'Janusz',
+  job: 'developer',
+};

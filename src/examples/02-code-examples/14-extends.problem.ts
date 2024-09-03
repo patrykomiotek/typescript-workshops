@@ -26,5 +26,7 @@ interface Comment {
 type tests = [
   Expect<Equal<User, { id: string; firstName: string; lastName: string }>>,
   Expect<Equal<Post, { id: string; title: string; body: string }>>,
+  Expect<Equal<Pick<Comment, 'id'>, { id: string }>>,
+  Expect<Equal<Omit<Comment, 'id'>, { comment: string }>>,
   Expect<Equal<Comment, { id: string; comment: string }>>,
 ];

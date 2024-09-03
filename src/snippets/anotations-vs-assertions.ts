@@ -15,13 +15,13 @@ interface TaxiDriver extends Human {
 declare let taxiDriver: TaxiDriver;
 
 // Employee is a developer or driver (or one both of them)
-type Employee = Developer | TaxiDriver;
+type CompanyEmployee = Developer | TaxiDriver;
 
 function helpMeWithCode(developer: Developer) {
   developer.code();
 }
 
-const employeeFactory = (): Employee => {
+const employeeFactory = (): CompanyEmployee => {
   if (Math.random()) {
     return {
       name: 'Joe',
@@ -41,11 +41,11 @@ const employeeFactory = (): Employee => {
 };
 
 // annotations - check compatibility
-const p1: Employee = employeeFactory();
+const p1: CompanyEmployee = employeeFactory();
 const p2: Developer = employeeFactory();
 
 // assertions
-const p3 = employeeFactory() as Employee; // unecessary
+const p3 = employeeFactory() as CompanyEmployee; // unecessary
 const p4 = employeeFactory() as Developer;
 
 helpMeWithCode(employeeFactory());
