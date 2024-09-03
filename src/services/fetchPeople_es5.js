@@ -1,4 +1,3 @@
-"use strict";
 // fetch data and return
 // Napisz funkcję getData, która zwróci 3 wartości: data, isLoading, isError
 // w zalezności od stanu Promisu. Promise słuzyl do pobierania danych.
@@ -53,8 +52,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.fetchPeople = void 0;
+var _this = this;
 var ApiError = /** @class */ (function (_super) {
     __extends(ApiError, _super);
     function ApiError() {
@@ -62,7 +60,7 @@ var ApiError = /** @class */ (function (_super) {
     }
     return ApiError;
 }(Error));
-var fetchPeople = function () { return __awaiter(void 0, void 0, void 0, function () {
+var fetchPeople = function () { return __awaiter(_this, void 0, void 0, function () {
     var response, error_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -74,8 +72,7 @@ var fetchPeople = function () { return __awaiter(void 0, void 0, void 0, functio
                 return [4 /*yield*/, response.json()];
             case 2: 
             // return response.json(); // Promise
-            // return (await response.json()) as ApiSuccess<Person[]>;
-            return [2 /*return*/, _a.sent()];
+            return [2 /*return*/, (_a.sent())];
             case 3:
                 error_1 = _a.sent();
                 if (error_1 instanceof ApiError) {
@@ -85,16 +82,12 @@ var fetchPeople = function () { return __awaiter(void 0, void 0, void 0, functio
                 else {
                     // general error
                 }
-                return [2 /*return*/, {
-                        count: 0,
-                        results: [],
-                    }];
+                return [3 /*break*/, 4];
             case 4: return [2 /*return*/];
         }
     });
 }); };
-exports.fetchPeople = fetchPeople;
-var fetchPerson = function (id) { return __awaiter(void 0, void 0, void 0, function () {
+var fetchPerson = function (id) { return __awaiter(_this, void 0, void 0, function () {
     var response, error_2;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -121,7 +114,7 @@ var fetchPerson = function (id) { return __awaiter(void 0, void 0, void 0, funct
         }
     });
 }); };
-var fetchStarship = function (id) { return __awaiter(void 0, void 0, void 0, function () {
+var fetchStarship = function (id) { return __awaiter(_this, void 0, void 0, function () {
     var response, data, error_3;
     return __generator(this, function (_a) {
         switch (_a.label) {
