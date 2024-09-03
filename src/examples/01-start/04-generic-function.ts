@@ -5,6 +5,12 @@
  */
 
 // Zaimplementuj funkcję firstElement
+const firstElement = <T>(arg: T[]) => {
+  if (arg.length === 0) {
+    return undefined;
+  }
+  return arg[0];
+};
 
 // Przykładowe użycie:
 console.log(firstElement([1, 2, 3])); // Powinno zwrócić 1

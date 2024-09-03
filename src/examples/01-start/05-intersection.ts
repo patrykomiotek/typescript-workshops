@@ -7,12 +7,20 @@
  */
 
 // Zdefiniuj interfejsy Name i Age
+interface Name {
+  name: string;
+}
+interface Age {
+  age: number;
+}
 
 // Utwórz typ Person
+interface Person extends Name, Age {}
 
 // Zaimplementuj funkcję introducePerson
 function introducePerson(person: Person): string {
   // Implementacja
+  return `My name is ${person.firstName} and I'm ${person.age} years old.`;
 }
 
 // Przykładowe użycie:
