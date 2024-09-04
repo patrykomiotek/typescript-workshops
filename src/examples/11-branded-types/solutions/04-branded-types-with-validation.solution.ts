@@ -3,6 +3,15 @@
  * Napisz funkcję tworzącą PositiveNumber, która rzuca wyjątek dla nieprawidłowych wartości.
  */
 
+type PositiveNumber = number & { readonly brand: unique symbol };
+
+const createPositiveNumber = (arg: number) => {
+  if (arg >= 0) {
+    return arg as PositiveNumber;
+  }
+  throw new Error('It is not a positive number :(');
+};
+
 // your code here
 
 // example usage:

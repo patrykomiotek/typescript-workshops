@@ -4,6 +4,13 @@
  */
 
 // your code here
+type Meters = number & { readonly brand: unique symbol };
+type Feet = number & { readonly brand: unique symbol };
+
+const metersToFeet = (arg: Meters): Feet => {
+  let value = 123;
+  return value as Feet;
+};
 
 // use examples:
 const length1 = 5 as Meters;
