@@ -9,22 +9,24 @@
  * 5. Wyświetlanie listy wypożyczonych książek
  */
 // Typ dla książki
-// type Book = {
-//   isbn: ISBN;
-//   title: string;
-//   author: string;
-//   year: number;
-// };
+type Book = {
+  isbn: ISBN; // branded type
+  title: string;
+  author: string;
+  year: number;
+};
 
 // Interfejs dla użytkownika
-// interface User {
-//   id: number;
-//   name: string;
-// }
+interface User {
+  id: number;
+  name: string;
+}
 
 // Typ dla wypożyczenia
-// type Borrow = {
-//   book: Book;
-//   user: User;
-//   dueDate: Date;
-// };
+type Borrow = {
+  book: Book;
+  user: User;
+  dueDate: Date;
+};
+
+type Library = Array<Book>;
