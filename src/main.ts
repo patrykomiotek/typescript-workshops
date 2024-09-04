@@ -14,26 +14,28 @@ import {
 const account = new BankAccount();
 account.deposit(500);
 account.withdraw(500);
+console.log('Balance: ', account.getBalance());
 
-class JuniorBankAccount extends BankAccount {
-  constructor() {
-    super();
-    console.log('Console log from JuniorBankAccount');
-  }
+// class JuniorBankAccount extends BankAccount {
+//   constructor() {
+//     super();
+//     console.log('Console log from JuniorBankAccount');
+//   }
 
-  // @log
-  // withdraw(amount: number) {
-  //   if (amount <= this.balance) {
-  //     this.balance -= amount;
-  //     return;
-  //   }
+//   // @log
+//   // withdraw(amount: number) {
+//   //   if (amount <= this.balance) {
+//   //     this.balance -= amount;
+//   //     return;
+//   //   }
 
-  //   throw new Error('Not enough money!');
-  // }
-}
-const jba = new JuniorBankAccount();
-jba.withdraw(100);
-console.log('Balance: ', jba.getBalance());
+//   //   throw new Error('Not enough money!');
+//   // }
+// }
+// const jba = new JuniorBankAccount();
+// jba.deposit(200);
+// jba.withdraw(100);
+// console.log('Balance: ', jba.getBalance());
 
 // document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 //   <div>

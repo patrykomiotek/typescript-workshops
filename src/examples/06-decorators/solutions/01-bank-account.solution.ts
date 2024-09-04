@@ -11,14 +11,29 @@ export const log = (
 };
 
 const sealed = (constructor: Function) => {
-  console.log('I am in constructor');
+  console.log('I am sealing object');
   Object.seal(constructor);
   Object.seal(constructor.prototype);
 };
 
-@sealed
+const freezed = (constructor: Function) => {
+  console.log('I am freezing object');
+  Object.freeze(constructor);
+  Object.freeze(constructor.prototype);
+};
+
+class NonExtendableClass {
+  private constructor() {}
+
+  static create() {
+    return new NonExtendableClass();
+  }
+}
+
+@freezed
 export class BankAccount {
-  protected balance: number = 0;
+  // protected balance: number = 0;
+  public balance: number = 0;
 
   @log
   deposit(amount: number) {

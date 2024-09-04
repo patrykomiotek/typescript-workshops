@@ -3,7 +3,7 @@ const log = (target: any) => {
 };
 
 class Car {
-  model: string;
+  declare model: string;
 
   drive() {
     console.log('I am driving');
