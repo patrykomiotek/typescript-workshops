@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/patrykomiotek/typescript-workshops#readme",
   "devDependencies": {
+    "@types/jquery": "^3.5.30",
     "@types/node": "^22.5.2",
     "@types/uuid": "^10.0.0",
     "autoprefixer": "^10.4.20",
@@ -45,6 +46,7 @@
   },
   "dependencies": {
     "date-fns": "^3.6.0",
+    "jquery": "^3.7.1",
     "ts-node": "^10.9.2",
     "uuid": "^10.0.0"
   }

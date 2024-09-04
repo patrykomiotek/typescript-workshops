@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitest/config';
 import checker from 'vite-plugin-checker';
 import { resolve } from 'path';
-// import tsconfigPaths from 'vite-tsconfig-paths';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import path from 'path';
 
 export default defineConfig({
@@ -20,6 +20,6 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
   },
-  // plugins: [tsconfigPaths()],
+  plugins: [tsconfigPaths()],
   // plugins: [checker({ typescript: true })]
 });

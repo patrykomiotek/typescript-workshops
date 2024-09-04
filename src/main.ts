@@ -7,6 +7,11 @@ import {
   BankAccount,
   log,
 } from './examples/06-decorators/solutions/01-bank-account.solution';
+import $ from 'jquery'; // :trollface
+
+// $.ajax({
+//   method: ''
+// })
 
 // const example = new Example();
 // example.someMethod(5); // Loguje: Wywołanie metody: someMethod z argumentami: 5
