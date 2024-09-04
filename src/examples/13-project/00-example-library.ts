@@ -8,3 +8,23 @@
  * 4. Wyświetlanie listy dostępnych książek
  * 5. Wyświetlanie listy wypożyczonych książek
  */
+// Typ dla książki
+// type Book = {
+//   isbn: ISBN;
+//   title: string;
+//   author: string;
+//   year: number;
+// };
+
+// Interfejs dla użytkownika
+// interface User {
+//   id: number;
+//   name: string;
+// }
+
+// Typ dla wypożyczenia
+// type Borrow = {
+//   book: Book;
+//   user: User;
+//   dueDate: Date;
+// };
