@@ -1,6 +1,6 @@
 //TODO: types for particular decorator types
 // https://www.typescriptlang.org/docs/handbook/decorators.html
-function logTarget(target: any, propertyKey?: string | symbol): void {
+function logTarget(target: Object, propertyKey?: string | symbol): void {
   console.log('Decorator target:', target, 'Property:', propertyKey);
 }
 

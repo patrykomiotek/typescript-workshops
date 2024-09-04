@@ -1,12 +1,12 @@
-type IsArray<T> = T extends Array<any> ? true : false;
-type NumberArrayCheck = IsArray<number[]>; // true
+type IsArray<T> = T extends Array<unknown> ? true : false;
+declare type NumberArrayCheck = IsArray<number[]>; // true
 type StringCheck = IsArray<string>; // false
 type ObjectCheck = IsArray<{ length: 10 }>; // false
 
 // Przykład użycia w kontekście
 function processInput<T>(input: T): IsArray<T> extends true ? T : T[] {
   if (Array.isArray(input)) {
-    return input as any; // Już jest tablicą
+    return input; // Już jest tablicą
   } else {
     return [input] as any; // Opakowujemy w tablicę
   }
